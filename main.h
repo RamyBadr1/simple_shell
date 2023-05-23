@@ -14,12 +14,12 @@
 #include <fcntl.h>
 
 /**
- * info - informations
+ * struct info - informations
  * @toke: token
  * @env: enviroment
  * @name: name
  * @c_name: c_name
- * Description: informations
+ * Description: informations for simple shell
 */
 typedef struct info
 {
@@ -30,10 +30,10 @@ typedef struct info
 } data_p;
 
 /**
- * builtins - builtin functions
+ * struct builtins - builtin functions
  * @env: env
  * @exit: exit
- * Description: builtin functions
+ * Description: builtin functions for simple shell
 */
 typedef struct builtin
 {
