@@ -30,10 +30,10 @@ typedef struct info
 } data_p;
 
 /**
- * struct builtins - builtin functions
+ * struct builtin - builtin
  * @env: env
  * @exit: exit
- * Description: builtin functions for simple shell
+ * Description: builtin struct for simple shell
 */
 typedef struct builtin
 {
