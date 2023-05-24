@@ -9,11 +9,12 @@
 */
 
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[], char **env)
 {
 data_p strct, *data = &strct;
 char *prompt;
-
+(void)**env;
+  
 set_data(data, argv);
 
 prompt = "";
