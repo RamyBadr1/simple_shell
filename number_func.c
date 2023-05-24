@@ -6,8 +6,10 @@
 * @str: a string pointer
 */
 
-void number_to_string(long num, char *str)      {
-int i, x = 0;                                   long n = num;
+void number_to_string(long num, char *str)
+{
+int i, x = 0;
+long n = num;
 char letter[] = {"0123456789"};
 i = 0;
 
