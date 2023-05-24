@@ -6,17 +6,15 @@
 * @str: a string pointer
 */
 
-void number_to_string(long num, char *str)
-{
-int i, x = 0;
-long n = num;
+void number_to_string(long num, char *str)      {
+int i, x = 0;                                   long n = num;
 char letter[] = {"0123456789"};
 i = 0;
 
 if (n == 0)
-str[i++] = 0;
+str[i++] = '0';
 
-if (str[0] == -)
+if (str[0] == '-')
 x = 1;
 
 while (n)
@@ -28,9 +26,9 @@ str[i++] =  letter[n % 10];
 n /= 10;
 }
 if (x)
-str[i++] = -;
+str[i++] = '-';
 
-str[i] = 0;
+str[i] = '\0';
 revers_str(str);
 }
 

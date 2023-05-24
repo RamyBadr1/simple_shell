@@ -16,35 +16,37 @@
 extern char **environ;
 
 /**
- * struct info - informations
- * @toke: token
- * @env: enviroment
- * @name: name
- * @c_name: c_name
- * Description: informations for simple shell
+* struct info - informations
+* @toke: token
+* @env: enviroment
+* @name: name
+* @c_name: c_name
+* @counter: count the number of execute
+* Description: informations for simple shell
 */
 typedef struct info
 {
-	char **toke;
-	char **env;
-	char *name;
-	char *c_name;
+char **toke;
+char **env;
+char **name;
+char *c_name;
+int counter;
 } data_p;
 
 /**
- * struct builtin - builtin
- * @env: env
- * @exit: exit
- * Description: builtin struct for simple shell
+* struct builtin - builtin
+* @env: env
+* @exit: exit
+* Description: builtin struct for simple shell
 */
 typedef struct builtin
 {
-	char *env;
-	char *exit;
+char *env;
+char *exit;
 } builtin;
 
 void s_handler(int s);
-void set_data(data_p *data, char *argv[]);
+void set_data(data_p *data, char **argv);
 int _execute(data_p *data);
 void shell_loop(data_p *data, char *prompt);
 int get_locat(data_p *data);
@@ -63,4 +65,7 @@ void print_env(void);
 int check_file(char *full_path);
 void get_line(data_p *data, char *prompt);
 void shell_loop(data_p *data, char *prompt);
+void number_to_string(long num, char *str);
+void revers_str(char *str);
+
 #endif
