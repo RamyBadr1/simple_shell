@@ -44,7 +44,7 @@ typedef struct builtin
 } builtin;
 
 void s_handler(int s);
-void set_data(data_p *data, char *agv[]);
+void set_data(data_p *data, char *argv[]);
 int _execute(data_p *data);
 void shell_loop(data_p *data, char *prompt);
 int get_locat(data_p *data);
