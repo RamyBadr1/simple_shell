@@ -56,6 +56,7 @@ char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 int handl_builtin(data_p *data);
 int _strcmp(char *s1, char *s2);
-int _print_error(int errorcode, data_p *data);
+int _print_error(int error, data_p *data);
+int _print(char *str);
 
 #endif
