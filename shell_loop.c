@@ -21,8 +21,8 @@ if (n == EOF)
 free(b);
 exit(errno);
 }
-if (b[n - 1] == n)
-b[n - 1] = 0;
+if (b[n - 1] == '\n')
+b[n - 1] = '\0';
 
 if (a >= 1)
 {
