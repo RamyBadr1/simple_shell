@@ -20,7 +20,7 @@ int _execute(data_p *data)
 		if (pidd == -1)
 		{
 			perror(data->name);
-			exit(EXIT_FAILURE);
+			exit(EXIT_SUCCESS);
 		}
 		if (pidd == 0)
 		{
@@ -28,7 +28,7 @@ int _execute(data_p *data)
 			if (x == -1)
 			{
 				perror(data->name);
-				exit(EXIT_FAILURE);
+				exit(EXIT_SUCCESS);
 			}
 		}
 		else
