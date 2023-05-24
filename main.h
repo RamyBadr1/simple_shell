@@ -57,6 +57,10 @@ char *_strdup(char *str);
 int handl_builtin(data_p *data);
 int _strcmp(char *s1, char *s2);
 int _print_error(int error, data_p *data);
-int _print(char *str);
-
+int _printe(char *str);
+void exit_shell(data_p *data);
+void print_env(void);
+int check_file(char *full_path);
+void get_line(data_p *data, char *prompt);
+void shell_loop(data_p *data, char *prompt);
 #endif
