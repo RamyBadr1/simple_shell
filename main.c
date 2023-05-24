@@ -12,10 +12,11 @@
 int main(int argc, char *argv[])
 {
 data_p strct, *data = &strct;
+char *prompt;
+
 set_data(data, argv);
 
-char *prompt = "";
-
+prompt = "";
 
 signal(SIGINT, s_handler);
 

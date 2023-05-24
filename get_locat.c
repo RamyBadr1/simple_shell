@@ -38,7 +38,7 @@ int length_p, length_arg, x = 0;
 if (!data->c_name)
 return (2);
 
-if (data->c_name[0] == / || data->c_name[0] == .)
+if (data->c_name[0] == '/' || data->c_name[0] == '.')
 return (check_file(data->c_name));
 
 path = getenv("PATH");

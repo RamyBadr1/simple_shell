@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
 * s_handler - handles commands

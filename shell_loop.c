@@ -48,7 +48,6 @@ free(b);
 
 void shell_loop(data_p *data, char *prompt)
 {
-char *i;
 int x = 0;
 
 while (1)
@@ -63,6 +62,5 @@ _print_error(x, data);
 }
 }
 free_array(data->toke);
-}
 free_data(data);
 }

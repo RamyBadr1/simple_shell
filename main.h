@@ -13,6 +13,8 @@
 #include <stddef.h>
 #include <fcntl.h>
 
+extern char **environ;
+
 /**
  * struct info - informations
  * @toke: token
@@ -45,9 +47,15 @@ void s_handler(int s);
 void set_data(data_p *data, char *agv[]);
 int _execute(data_p *data);
 void shell_loop(data_p *data, char *prompt);
-void _handler(int s);
 int get_locat(data_p *data);
 void free_data(data_p *data);
 void free_array(char **array);
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
+char *_strdup(char *str);
+int handl_builtin(data_p *data);
+int _strcmp(char *s1, char *s2);
+int _print_error(int errorcode, data_p *data);
 
 #endif
