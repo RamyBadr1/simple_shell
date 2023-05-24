@@ -6,6 +6,6 @@
 */
 void s_handler(int s)
 {
-	(void)s;
+	(void) s;
 	write(STDOUT_FILENO, "\n$ ", 3);
 }

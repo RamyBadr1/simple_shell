@@ -8,16 +8,16 @@
 
 void free_array(char **array)
 {
-int i;
+	int i;
 
-if (array != NULL)
-{
-for (i = 0; array[i]; i++)
-free(array[i]);
+	if (array != NULL)
+	{
+		for (i = 0; array[i]; i++)
+			free(array[i]);
 
-free(array);
-array = NULL;
-}
+		free(array);
+		array = NULL;
+	}
 }
 
 /**
@@ -27,11 +27,11 @@ array = NULL;
 
 void free_data(data_p *data)
 {
-if (data->toke)
-free_array(data->toke);
-if (data->c_name)
-free(data->c_name);
+	if (data->toke)
+		free_array(data->toke);
+	if (data->c_name)
+		free(data->c_name);
 
-data->c_name = NULL;
-data->toke = NULL;
+	data->c_name = NULL;
+	data->toke = NULL;
 }

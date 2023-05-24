@@ -1,58 +1,59 @@
-#include "main.h"
+nclude "main.h"
 
 
 /**
-* main - tha main function for the hsh shell
-* @argc: number og value;
-* @argv: array of argument
-* Return: 0
-*/
+ * main - tha main function for the hsh shell
+ * @argc: number og value;
+ * @argv: array of argument
+ * Return: 0
+ */
 
 
-int main(int argc, char *argv[], char **env)
+int main(int argc, char *argv[])
 {
-data_p strct, *data = &strct;
-char *prompt;
-(void)**env;
-  
-set_data(data, argv);
+	data_p strct, *data = &strct;
 
-prompt = "";
+	set_data(data, argv);
 
-signal(SIGINT, s_handler);
+	char *prompt = "";
 
-if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1) && argc == 1)
-{
-prompt = "$ ";
-}
-shell_loop(data, prompt);
 
-return (0);
+	signal(SIGINT, s_handler);
+
+	if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1) && argc == 1)
+	{
+		prompt = "$ ";
+	}
+	shell_loop(data, prompt);
+
+	return (0);
 }
 
 /**
-* set_data - set the struct array to their value
-* @data: a pointer to a struct array
-* @argv: the argument
-*/
+ * set_data - set the struct array to their value
+ * @data: a pointer to a struct array
+ * @argv: the argument
+ */
 
 
 void set_data(data_p *data, char *argv[])
 {
-int i;
-data->name = argv[0];
-data->toke = NULL;
-data->c_name = NULL;
+	int i;
 
-for (i = 0; environ[i]; i++)
-;
+	data->name = argv[0];
+	data->toke = NULL;
+	data->c_name = NULL;
 
-data->env = malloc(sizeof(char *) * (i + 1));
+	for (i = 0; environ[i]; i++)
+	;
 
-for (i = 0; environ[i]; i++)
-{
-data->env[i] = _strdup(environ[i]);
+	data->env = malloc(sizeof(char *) * (i + 1));
+
+	for (i = 0; environ[i]; i++)
+	{
+		data->env[i] = _strdup(environ[i]);
+	}
+	data->env[i] = NULL;
+	environ = data->env;
 }
-data->env[i] = NULL;
-environ = data->env;
-}
+

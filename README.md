@@ -40,4 +40,4 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ## Authors
 
 alidrisy <125469989+alidrisy@users.noreply.github.com>
-RamyBadr1 <ramybadr054@gmail.com> 
+RamyBadr1 <ramybadr054@gmail.com>
