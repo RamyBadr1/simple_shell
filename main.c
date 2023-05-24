@@ -1,5 +1,4 @@
-include "main.h"
-
+#include "main.h"
 
 /**
  * main - tha main function for the hsh shell
