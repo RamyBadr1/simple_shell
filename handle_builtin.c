@@ -42,12 +42,12 @@ builtin built = {"env", "exit"};
 if (_strcmp(data->c_name, built.env) == 0)
 {
 print_env();
-return (-1);
+return (1);
 }
 else if (_strcmp(data->c_name, built.exit) == 0)
 {
 exit_shell(data);
-return (-1);
+return (1);
 }
 return (0);
 }
