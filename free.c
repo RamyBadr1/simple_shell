@@ -29,7 +29,7 @@ void free_data(data_p *data)
 {
 	if (data->toke)
 		free_array(data->toke);
-	if (data->c_name)
+	else if (data->c_name)
 		free(data->c_name);
 
 	data->c_name = NULL;
