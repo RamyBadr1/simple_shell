@@ -41,7 +41,7 @@ return (2);
 if (data->c_name[0] == '/' || data->c_name[0] == '.')
 return (check_file(data->c_name));
 
-path = getenv("PATH");
+path = getenv("PATH=");
 path = _strdup(path);
 length_arg = _strlen(data->toke[0]);
 token = strtok(path, ":");
