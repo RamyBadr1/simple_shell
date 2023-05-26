@@ -1,3 +1,6 @@
+#ifndef LIB_H
+#define LIB_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,3 +11,5 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
+
+#endif

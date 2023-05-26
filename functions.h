@@ -1,3 +1,6 @@
+#ifndef FUNC_H
+#define FUNC_H
+
 extern char **environ;
 
 /* toem_shloop.c */
@@ -127,3 +130,5 @@ ssize_t read_buf(info_t *, char *, size_t *);
 int print_alias(list_t *);
 int set_alias(info_t *, char *);
 int unset_alias(info_t *, char *);
+
+#endif

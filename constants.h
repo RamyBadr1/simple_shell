@@ -1,3 +1,6 @@
+#ifndef CONST_H
+#define CONST_H
+
 /* for read/write buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
@@ -19,3 +22,5 @@
 
 #define HIST_FILE	".simple_shell_history"
 #define HIST_MAX	4096
+
+#endif

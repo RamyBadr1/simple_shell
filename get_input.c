@@ -15,32 +15,32 @@ ssize_t get_input(info_t *info)
 
 	_putchar(BUF_FLUSH);
 	r = input_buf(info, &buf, &len);
-	if (r == -1) 
+	if (r == -1)
 		return (-1);
 	if (len)
 	{
-		j = i; 
-		p = buf + i; 
+		j = i;
+		p = buf + i;
 
 		check_chain(info, buf, &j, i, len);
-		while (j < len) 
+		while (j < len)
 		{
 			if (is_chain(info, buf, &j))
 				break;
 			j++;
 		}
 
-		i = j + 1; 
+		i = j + 1;
 		if (i >= len)
 		{
-			i = len = 0; 
+			i = len = 0;
 			info->cmd_buf_type = CMD_NORM;
 		}
 
 		*buf_p = p;
-		return (_strlen(p)); 
+		return (_strlen(p));
 	}
 
-	*buf_p = buf; /* else not a chain, pass back buffer from _getline() */
-	return (r); /* return length of buffer from _getline() */
+	*buf_p = buf;
+	return (r);
 }
