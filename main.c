@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	if (argc == 2)
 	{
 		filedescriptor = open(argv[1], O_RDONLY);
-		if (filedescriptor < 0)
+		if (filedescriptor == -1)
 		{
 			if (errno == EACCES)
 				exit(126);
