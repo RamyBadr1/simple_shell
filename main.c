@@ -1,58 +1,44 @@
 #include "main.h"
 
-
 /**
-* main - tha main function for the hsh shell
-* @argc: number og value;
-* @argv: array of argument
-* Return: 0
-*/
-
-int main(int argc, char **argv)
+ * main - entry point
+ * @ac: arg count
+ * @av: arg vector
+ *
+ * Return: 0 on success, 1 on error
+ */
+int main(int ac, char **av)
 {
-data_p strct;
-data_p *data = &strct;
-char *prompt;
+	info_t info[] = { INFO_INIT };
+	int fd = 2;
 
-set_data(data, argv);
+	asm ("mov %1, %0\n\t"
+			"add $3, %0"
+			: "=r" (fd)
+			: "r" (fd));
 
-prompt = "";
-
-signal(SIGINT, s_handler);
-
-if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1) && argc == 1)
-{
-prompt = "$ ";
-}
-shell_loop(data, prompt);
-
-return (0);
-}
-
-/**
-* set_data - set the struct array to their value
-* @data: a pointer to a struct array
-* @argv: the argument
-*/
-
-
-void set_data(data_p *data, char **argv)
-{
-int i;
-data->name = argv;
-data->toke = NULL;
-data->c_name = NULL;
-data->counter = 0;
-
-for (i = 0; environ[i]; i++)
-;
-
-data->env = malloc(sizeof(char *) * (i + 1));
-
-for (i = 0; environ[i]; i++)
-{
-data->env[i] = _strdup(environ[i]);
-}
-data->env[i] = NULL;
-environ = data->env;
+	if (ac == 2)
+	{
+		fd = open(av[1], O_RDONLY);
+		if (fd == -1)
+		{
+			if (errno == EACCES)
+				exit(126);
+			if (errno == ENOENT)
+			{
+				_eputs(av[0]);
+				_eputs(": 0: Can't open ");
+				_eputs(av[1]);
+				_eputchar('\n');
+				_eputchar(BUF_FLUSH);
+				exit(127);
+			}
+			return (EXIT_FAILURE);
+		}
+		info->readfd = fd;
+	}
+	populate_env_list(info);
+	read_history(info);
+	hsh(info, av);
+	return (EXIT_SUCCESS);
 }
